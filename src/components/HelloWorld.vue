@@ -14,7 +14,7 @@ export default {
   name: 'HelloWorld',
   data: () => ({
     msg: 'Hello World',
-    bio: "My name is Sten Li, I'm a programmer.",
+    bio: "I'm a programmer.",
   }),
 };
 </script>

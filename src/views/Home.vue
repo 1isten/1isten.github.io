@@ -1,7 +1,7 @@
 <template>
   <v-layout justify-center align-center column wrap>
     <v-flex shrink>
-      <hirasawa-yui />
+      <the-lain />
     </v-flex>
     <v-flex shrink>
       <hello-world />
@@ -13,14 +13,14 @@
 </template>
 
 <script>
-import HirasawaYui from '@/components/HirasawaYui';
+import TheLain from '@/components/TheLain';
 import HelloWorld from '@/components/HelloWorld';
 import ExternalLinks from '@/components/ExternalLinks';
 
 export default {
   name: 'HomePage',
   components: {
-    HirasawaYui,
+    TheLain,
     HelloWorld,
     ExternalLinks,
   },

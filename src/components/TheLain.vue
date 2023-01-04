@@ -2,7 +2,7 @@
   <div v-resize="onResize" class="avatar" :style="avatarContainerStyle">
     <v-img
       :src="require('@/assets/280544@1563729391.jpg')"
-      :lazy-src="require('@/assets/280544@1563729391-lazy.png')"
+      :lazy-src="require('@/assets/280544@1563729391-lazy.jpg')"
       :height="'100%'"
       :style="avatarStyle"
     />
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'HirasawaYui',
+  name: 'LainIwakura',
   data: () => ({
     delta: 200,
   }),
