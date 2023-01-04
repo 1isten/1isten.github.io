@@ -18,7 +18,7 @@ import HelloWorld from '@/components/HelloWorld';
 import ExternalLinks from '@/components/ExternalLinks';
 
 export default {
-  name: 'Home',
+  name: 'HomePage',
   components: {
     HirasawaYui,
     HelloWorld,

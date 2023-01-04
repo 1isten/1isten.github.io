@@ -1,18 +1,21 @@
+/* eslint-disable prettier/prettier */
 module.exports = {
   root: true,
   env: {
     browser: true,
     node: true,
   },
+  parser: 'vue-eslint-parser',
   parserOptions: {
+    parser: '@babel/eslint-parser',
     ecmaVersion: 6,
-    parser: 'babel-eslint',
+    // requireConfigFile: false,
   },
   extends: [
     'prettier',
     'plugin:prettier/recommended',
+    // 'eslint:recommended',
     'plugin:vue/essential',
-    'eslint:recommended',
   ],
   plugins: [
     'prettier',

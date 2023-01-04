@@ -13,6 +13,12 @@
   </v-layout>
 </template>
 
+<script>
+export default {
+  name: 'NotFound',
+};
+</script>
+
 <style scoped>
 #homepage {
   font-family: 'Roboto Mono', monospace;
