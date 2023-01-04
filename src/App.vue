@@ -34,6 +34,7 @@ export default {
   },
   watch: {
     isDark(isDark) {
+      document.documentElement.style.setProperty('color-scheme', isDark ? 'dark' : 'normal');
       const themeColorMeta = document.querySelector('head > meta[name="theme-color"]');
       themeColorMeta.setAttribute('content', isDark ? '#202024' : '#dee1e6');
     },
