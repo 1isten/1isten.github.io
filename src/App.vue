@@ -98,7 +98,7 @@ body {
   }
 
   .v-icon {
-    color: #ffffffde !important;
+    color: #f0f6fc !important;
   }
 }
 </style>

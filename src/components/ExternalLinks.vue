@@ -66,21 +66,21 @@ export default {
 .link-icon-Stack,
 .link-icon-GitHub,
 .link-icon-Twitter {
-  transition: 0.3s;
+  transition: 300ms;
 }
 
 .link-btn:hover .link-icon-Stack {
-  color: #108775 !important;
-}
-@media (prefers-color-scheme: dark) {
-  .link-btn:hover .link-icon-Stack {
-    color: #00c58e !important;
-  }
+  color: #00dc82 !important;
 }
 .link-btn:hover .link-icon-GitHub {
-  color: #191717 !important;
+  color: #24292f !important;
 }
 .link-btn:hover .link-icon-Twitter {
   color: #1d9bf0 !important;
+}
+@media (prefers-color-scheme: dark) {
+  .link-btn:hover .link-icon-GitHub {
+    color: rgba(255, 255, 255, 0.7) !important;
+  }
 }
 </style>
