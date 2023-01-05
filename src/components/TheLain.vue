@@ -8,7 +8,7 @@
         :style="avatarStyle"
         @load="onLoad"
         @click="onGlitch"
-        @mouseenter="onGlitch"
+        @mouseover="onGlitch"
       />
     </div>
   </div>
