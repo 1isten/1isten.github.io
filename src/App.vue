@@ -49,10 +49,18 @@ export default {
   --color: #000000de;
 }
 
+html {
+  width: 100vw;
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
 html,
 body {
-  width: 100vw;
-  height: 100vh;
   background: var(--background);
   font-size: var(--font-size) !important;
   margin: 0;
@@ -72,14 +80,16 @@ body {
 }
 
 #app {
-  width: 100%;
-  height: 100%;
   background: var(--background);
   color: var(--color);
   text-align: center;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.v-application--wrap {
+  min-height: 0;
 }
 
 .v-image__image--preload {

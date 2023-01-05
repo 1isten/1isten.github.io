@@ -1,13 +1,15 @@
 <template>
-  <div v-resize="onResize" class="avatar" :class="{ glitch }" :style="s">
-    <v-img
-      :src="src"
-      :lazy-src="srcLazy"
-      :height="'100%'"
-      :style="avatarStyle"
-      @click="onClick"
-      @load="onLoad"
-    />
+  <div v-show="innerHeight" :style="`margin-top: ${mt}px;`">
+    <div v-resize="onResize" class="avatar" :class="{ glitch }" :style="s">
+      <v-img
+        :src="src"
+        :lazy-src="srcLazy"
+        :height="'100%'"
+        :style="avatarStyle"
+        @click="onClick"
+        @load="onLoad"
+      />
+    </div>
   </div>
 </template>
 
@@ -17,12 +19,16 @@ export default {
   data: () => ({
     src: require('@/assets/280544@1563729391.jpg'),
     srcLazy: require('@/assets/280544@1563729391-lazy.jpg'),
+    innerHeight: 0,
     delta: 200,
     loaded: false,
     glitch: false,
     glitches: [],
   }),
   computed: {
+    mt() {
+      return Math.max(0, this.innerHeight / 2 - this.delta);
+    },
     s() {
       let s = `
         position: relative;
@@ -103,6 +109,7 @@ export default {
       }
       const final = delta + 0.06 * vw + 0.04 * vh;
       this.delta = final < 200 ? final : 200;
+      this.innerHeight = vh;
     },
   },
 };
