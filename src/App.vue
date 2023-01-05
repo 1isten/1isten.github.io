@@ -87,6 +87,11 @@ body {
   filter: blur(4px) !important;
 }
 
+.avatar {
+  transition: filter 1000ms;
+  filter: brightness(2);
+}
+
 .v-icon {
   color: #5f6368 !important;
 }
@@ -95,6 +100,10 @@ body {
   :root {
     --background: rgb(53, 54, 58);
     --color: rgba(238, 238, 238, 1);
+  }
+
+  .avatar {
+    filter: none;
   }
 
   .v-icon {
