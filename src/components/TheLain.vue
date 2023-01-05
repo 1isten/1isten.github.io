@@ -6,8 +6,9 @@
         :lazy-src="srcLazy"
         :height="'100%'"
         :style="avatarStyle"
-        @click="onClick"
         @load="onLoad"
+        @click="onGlitch"
+        @mouseenter="onGlitch"
       />
     </div>
   </div>
@@ -56,7 +57,41 @@ export default {
     },
   },
   methods: {
-    glitchGen() {
+    onResize() {
+      const pa = 12 * 2;
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const min = vw < vh ? vw : vh;
+      const max = 100;
+      let delta = max;
+      if (min < max + pa) {
+        delta = min - pa;
+      }
+      const final = delta + 0.06 * vw + 0.04 * vh;
+      this.delta = final < 200 ? final : 200;
+      this.innerHeight = vh;
+    },
+    onLoad() {
+      setTimeout(() => {
+        this.loaded = true;
+        this.$nextTick(() => {
+          this.onGlitch();
+        });
+      }, 700);
+    },
+    onGlitch() {
+      if (this.glitch) {
+        return;
+      }
+      this.glitches = this.makeGlitch();
+      this.$nextTick(() => {
+        this.glitch = true;
+        setTimeout(() => {
+          this.glitch = false;
+        }, 300);
+      });
+    },
+    makeGlitch() {
       const rand = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
       const glitches = [];
       for (let i = 0; i < 11; i++) {
@@ -76,40 +111,6 @@ export default {
         });
       }
       return glitches;
-    },
-    onLoad() {
-      setTimeout(() => {
-        this.loaded = true;
-        this.$nextTick(() => {
-          this.onClick();
-        });
-      }, 700);
-    },
-    onClick() {
-      if (this.glitch) {
-        return;
-      }
-      this.glitches = this.glitchGen();
-      this.$nextTick(() => {
-        this.glitch = true;
-        setTimeout(() => {
-          this.glitch = false;
-        }, 300);
-      });
-    },
-    onResize() {
-      const pa = 12 * 2;
-      const vw = window.innerWidth;
-      const vh = window.innerHeight;
-      const min = vw < vh ? vw : vh;
-      const max = 100;
-      let delta = max;
-      if (min < max + pa) {
-        delta = min - pa;
-      }
-      const final = delta + 0.06 * vw + 0.04 * vh;
-      this.delta = final < 200 ? final : 200;
-      this.innerHeight = vh;
     },
   },
 };
