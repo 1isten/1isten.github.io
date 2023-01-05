@@ -28,7 +28,7 @@ export default {
   }),
   computed: {
     mt() {
-      return Math.max(0, this.innerHeight / 2 - this.delta);
+      return Math.max(8, this.innerHeight / 2 - this.delta);
     },
     s() {
       let s = `
