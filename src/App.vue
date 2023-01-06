@@ -5,12 +5,24 @@
         <router-view />
       </v-container>
     </v-main>
+    <v-footer color="transparent" padless>
+      <v-row justify="center" no-gutters>
+        <v-col class="text-center" cols="12">
+          <external-links />
+        </v-col>
+      </v-row>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
+import ExternalLinks from '@/components/ExternalLinks';
+
 export default {
   name: 'App',
+  components: {
+    ExternalLinks,
+  },
   data: () => ({
     prefersDark: undefined,
     isDark: false,
