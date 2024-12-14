@@ -4,7 +4,7 @@ Source code for [my homepage](https://1isten.github.io/).
 
 ## Build for offline
 ```
-npm install
+npm i
 ```
 
 ### Compiles and hot-reloads for development

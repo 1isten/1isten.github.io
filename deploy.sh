@@ -4,13 +4,13 @@
 set -e
 
 # build
-yarn build
+npm run build
 
 # navigate into the build output directory
 cd dist
 
 # if you are deploying to a custom domain
-echo 'sten.app' > CNAME
+# echo 'sten.app' > CNAME
 
 git init
 git add -A
