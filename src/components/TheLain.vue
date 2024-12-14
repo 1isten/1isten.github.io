@@ -7,8 +7,9 @@
         :height="'100%'"
         :style="avatarStyle"
         @load="onLoad"
-        @click="onGlitch"
         @mouseover="onGlitch"
+        @mousedown="onGlitch"
+        @click="onClick"
       />
     </div>
   </div>
@@ -57,6 +58,11 @@ export default {
     },
   },
   methods: {
+    onClick(e) {
+      const a = document.createElement('a');
+      a.href = 'https://github.com/1isten';
+      a.click();
+    },
     onResize() {
       const pa = 12 * 2;
       const vw = window.innerWidth;
@@ -117,6 +123,9 @@ export default {
 </script>
 
 <style>
+.avatar:hover {
+  cursor: pointer;
+}
 .avatar::after {
   content: '';
   display: none;

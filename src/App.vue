@@ -5,7 +5,7 @@
         <router-view />
       </v-container>
     </v-main>
-    <v-footer color="transparent" padless>
+    <v-footer v-if="false" color="transparent" padless>
       <v-row justify="center" no-gutters>
         <v-col class="text-center" cols="12">
           <external-links />
@@ -120,7 +120,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: rgb(53, 54, 58);
+    --background: rgb(60, 60, 60);
     --color: rgba(238, 238, 238, 1);
   }
 
